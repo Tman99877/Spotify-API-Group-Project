@@ -7,12 +7,13 @@ authrozationtoken = 'BQBgNwMXjjYRIrisaa6b8fq4Mxk36-QK_xlh5x359_I0hQwUkazaL_n_SmW
 app.use('/static',express.static('public'));
 app.set("view engine","ejs");
 
-app.get('/', function(req,res){
-    
-    res.render('index.ejs');
+app.get('/', function(req,res){  
+    // res.render('index.ejs');
+    res.render('frontpage.ejs');
 })
 
-
+// spotify.response for each
+// if not spotify information redirect to home
 
 app.listen(3000,function(){
     console.log('App listening on port 3000');
