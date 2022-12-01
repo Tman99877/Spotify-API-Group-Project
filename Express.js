@@ -6,12 +6,15 @@ const axios = require("axios");
 app.use('/static',express.static('public'));
 app.set("view engine","ejs");
 
-const REDIRECT_URI_DECODED = "https://3000-mckenkoe-spotifyapigrou-qj7bwkv39ou.ws-us77.gitpod.io/index";
+const CLIENT_ID =  "4c1cedee591e4d5e95c55189715f2c53"
+const REDIRECT_URI_DECODED = "aHR0cHM6Ly8zMDAwLW1ja2Vua29lLXNwb3RpZnlhcGlncm91LTBsN2FsaHBjZHhzLndzLXVzNzcuZ2l0cG9kLmlvL2luZGV4";
 // const BASE64_AUTHORIZATION = "NzU0OWQ4N2NmODQxNGZiZGJmNzk1NWIxODU2ZjAyMzk6YzdlNWZmMWU3ODcyNGM0NjlkZDI3MWM3YzY4ZDY0NTE=";
 
 // app.listen(8080, () => {
 //   console.log("App is listening on port 8080!\n");
 // });
+
+
 
 app.listen(3000,function(){
     console.log('App listening on port 3000');
