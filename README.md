@@ -18,7 +18,7 @@ To run application, use the following command:
 
 This application requires the following dependencies:
 
-    **axios: ^1.2.0,
+    **axios: ^1.2.0,**
     
     **ejs: ^3.1.8,**
     
