@@ -6,7 +6,7 @@ const axios = require("axios");
 app.use('/static',express.static('public'));
 app.set("view engine","ejs");
 
-const REDIRECT_URI_DECODED = "https://3000-mckenkoe-spotifyapigrou-dlv9f8vnpc1.ws-us77.gitpod.io/index";
+const REDIRECT_URI_DECODED = "https%3A%2F%2Fsenioerproject.onrender.com";
 const BASE64_AUTHORIZATION = "NzU0OWQ4N2NmODQxNGZiZGJmNzk1NWIxODU2ZjAyMzk6YzdlNWZmMWU3ODcyNGM0NjlkZDI3MWM3YzY4ZDY0NTE=";
 
 app.listen(3000,function(){
