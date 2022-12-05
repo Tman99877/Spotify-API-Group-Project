@@ -6,12 +6,8 @@ const axios = require("axios");
 app.use('/static',express.static('public'));
 app.set("view engine","ejs");
 
-const REDIRECT_URI_DECODED = "https://3000-mckenkoe-spotifyapigrou-qj7bwkv39ou.ws-us77.gitpod.io/index";
-// const BASE64_AUTHORIZATION = "NzU0OWQ4N2NmODQxNGZiZGJmNzk1NWIxODU2ZjAyMzk6YzdlNWZmMWU3ODcyNGM0NjlkZDI3MWM3YzY4ZDY0NTE=";
-
-// app.listen(8080, () => {
-//   console.log("App is listening on port 8080!\n");
-// });
+const REDIRECT_URI_DECODED = "https://3000-mckenkoe-spotifyapigrou-dlv9f8vnpc1.ws-us77.gitpod.io/index";
+const BASE64_AUTHORIZATION = "NzU0OWQ4N2NmODQxNGZiZGJmNzk1NWIxODU2ZjAyMzk6YzdlNWZmMWU3ODcyNGM0NjlkZDI3MWM3YzY4ZDY0NTE=";
 
 app.listen(3000,function(){
     console.log('App listening on port 3000');
@@ -24,18 +20,18 @@ app.get("/", (req, res) => {
 app.get("/index", async (req, res) => {
     console.log("spotify response code is " + req.query.code);
     res.render("index.ejs");
-    console.log(REDIRECT_URI_DECODED);
+    // console.log(REDIRECT_URI_DECODED);
 
     const spotifyResponse = await axios.post(
         "https://accounts.spotify.com/api/token",
         queryString.stringify({
           grant_type: "authorization_code",
           code: req.query.code,
-          redirect_uri: process.env.REDIRECT_URI_DECODED,
+          redirect_uri: REDIRECT_URI_DECODED,
         }),
         {
           headers: {
-            Authorization: "Basic " + process.env.BASE64_AUTHORIZATION,
+            Authorization: "Basic " + BASE64_AUTHORIZATION,
             "Content-Type": "application/x-www-form-urlencoded",
           },
         }
